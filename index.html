@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="images/onglet.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navBar">
+            <ul>
+                <li><a class="ici" href="index.html">Accueil</a></li>
+                <li><a href="competences.html">Competences</a></li>
+                <li><a href="propos.html">A propos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN  -->
+
+    <section class="home">
+        <div class="imgUsers">
+            <img class="back" src="images/Try3.png">
+        </div>
+        <div class="name unReveal">
+            <h1>Mohamed</br>Aziz</br>Batikh</h1>
+            <a href="#formulaire"><button class="contact">Contactez moi</button></a>
+        </div>
+        <img id="foot" src="images/ballon3.png" alt="ballon de foot">
+
+    </section>
+
+
+      <!-- NAVBAR mobile -->
+      
+      <div class="menu"> 
+        <button class="btn-top">
+            <img src="images/menu.png" alt="buttonNavigation">
+        </button>
+        <div class="links">
+            <ul> 
+                <li>
+                    <a href="index.html">Accueil</a>
+                </li>
+                <li>
+                    <a href="competences.html">Competences</a>
+                </li>
+                <li>
+                    <a href="propos.html">A propos</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- FORMULAIRE -->
+
+    <section id="formulaire" class="formulaire unReveal">
+        <div class="backForm">
+            <div class="inputName">
+                <input type="text" name="first" placeholder="Prénom" autocomplete="off" required>
+                <input type="text" name="last" placeholder="Nom" autocomplete="off" required>
+                <input type="email" name="email" placeholder="Adresse mail" autocomplete="on" required>
+                <textarea rows="5" cols="60" name="message" placeholder="Entrez votre message" autocomplete="off" required></textarea>
+                <div class="button2">
+                  <button type="submit">Envoyer</button>
+                  <button type="reset">Renitialiser</button>
+                </div>
+            </div>
+            <div class="rightForm">
+                <p>Pour me <span class="txtYellow">contacter</span>, remplir le </br>formulaire.</p>
+                <div class="social">
+                    <a href="https://www.facebook.com/aziz.battikh.77" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
+                    <a href="https://www.instagram.com/aziz____btk_/" target="_blank"><img src="images/instagram.png" alt="instagram"></a>
+                    <a href="https://www.github.com/azizbatikh" target="_blank"><img src="images/github.png" alt="github"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNATURE -->
+
+    <footer>
+        <div class="backFooter">
+            <p>All rights reserved. © 2023 Aziz Batikh ©</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body> 
+</html>

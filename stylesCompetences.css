@@ -1,0 +1,1070 @@
+@font-face {
+    font-family: Josefin;
+    src: url(Font/JosefinSans-VariableFont_wght.ttf);
+}
+
+*{
+    font-family: Josefin;
+    font-weight: 350;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+/* VARIABLE */
+:root {
+    --color-blue: #6da8ff;
+    --color-yellow: #edda5d;
+    --color-gray: #b0c2d0;
+    --color-white: #d9d9d98e;
+}
+
+/* NAVIGATION BAR */
+
+body{
+    background: var(--color-white);
+    overflow-x: hidden;
+    min-width: 300px;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px 10%  ;
+    animation: slideTop 1.5s ease forwards;
+}
+
+.navBar{
+    display: flex;
+    justify-content: center;
+}
+
+.navBar ul {
+    list-style: none;
+    display: inline-flex;
+    align-items:  center;
+    justify-content: center;
+}
+
+.navBar li{ 
+    margin: 0% 5vh;
+    padding: 10px 0px;
+}
+
+.navBar li a {
+    color: var(--color-blue);
+    font-size: 1.8rem;
+    position: relative;
+    font-weight: 600;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 6px;
+    letter-spacing: 3px;
+    text-align: center;
+    border-radius: 20px;
+    transition: .4s;
+}
+
+.navBar li a::after {
+    content: '';
+    width: 0%;
+    height: 4px;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--color-yellow);
+    transition: .4s;
+}
+
+.navBar li a:hover::after, 
+.navBar .ici::after {
+    width: 100%;
+}
+
+
+
+
+/* MAIN */
+
+.home {     
+    width: auto;
+    height: auto;
+    margin: 15vh 10% 30vh 10%;
+    min-width: 360px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    height: auto;
+    align-items: center;
+    justify-items: center;
+    border-radius: 2rem;
+    box-shadow: 8px -8px 0px #edda5d, -6px 6px 20px rgba(0, 0, 0, 0.2);
+    width: auto;
+    background: var(--color-blue);
+    padding-bottom: 5rem;
+    padding-top: 3.5rem;
+    gap: 5rem;
+}
+
+.origin {
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+    justify-items: center;
+    height: auto;
+    width: 100%;
+}
+
+.contentBar {
+    display: flex;
+    width: 80%;
+    height: 26px;
+    background: rgba(83, 83, 83, 0.3);
+    border-radius: 1rem;
+    box-shadow: 0px 3px 0px #4c75b2, 0px 3px 2px rgba(0, 0, 0, 0.3);
+}
+    
+.progressBar{
+    background: var(--color-yellow);
+    width: 0%;
+    height: 100%;
+    border-radius: 1rem;
+    box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.3);
+    transition: .5s;
+}
+
+.contentBar::after {
+    content: '0%';
+    margin-top: 1px;
+    font-size: 1.5rem;
+    color: var(--color-blue);
+    text-shadow: 1px 1px 1px rgba(51, 105, 185, 0.5);
+    font-weight: 600;
+    letter-spacing: .5rem;
+    position: absolute;
+    left: 48%;
+
+}
+
+
+.contentBar.C::after {
+    content: '40%';}
+.progressBar.C {
+    animation: progressC 2s ease forwards;
+    transition: .2s;
+}
+
+.contentBar.HTML::after {
+    content: '75%';}
+.progressBar.HTML {
+    animation: progressHTML 2s ease forwards;
+    transition: .2s;
+    animation-delay: .2s;
+}
+
+.contentBar.CSS::after {
+    content: '70%';}
+.progressBar.CSS {
+    animation: progressCSS 2s ease forwards;
+    transition: .2s;
+    animation-delay: .4s;
+}
+
+.contentBar.JS::after {
+    content: '45%';}
+.progressBar.JS {
+    animation: progressJS 2s ease forwards;
+    transition: .2s;
+    animation-delay: .6s;
+}
+
+.contentBar.SQL::after {
+    content: '60%';}
+.progressBar.SQL {
+    animation: progressSQL 2s ease forwards;
+    transition: .2s;
+    animation-delay: .5s;
+}
+
+@keyframes progressC {
+    0% { width: 0%; }
+    100% { width: 40%; }
+}
+@keyframes progressHTML {
+    0% { width: 0%; }
+    100% { width: 75%; }
+}
+@keyframes progressCSS {
+    0% { width: 0%; }
+    100% { width: 70%; }
+}
+@keyframes progressJS {
+    0% { width: 0%; }
+    100% { width: 45%; }
+}
+@keyframes progressSQL {
+    0% { width: 0%; }
+    100% { width: 60%; }
+}
+
+
+
+
+
+.origin h2 {
+    color: var(--color-yellow);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 0px #3d649e, 2px 3px 0px rgb(76, 124, 184)
+}
+
+
+
+
+
+
+
+/* #foot {
+    position: absolute;
+    opacity: 1;
+    z-index: 2;
+    width: 25%;
+    top: 18%;
+    right: -18.7%;
+    transition: .8s;
+    animation: ballLoop 10s linear infinite;
+
+}
+
+#foot:hover {
+    right: -8%;
+    transform: scale(110%);
+} */
+
+
+/* FORMULAIRE */
+
+.txtYellow {
+    color: var(--color-yellow);
+    font-weight: 500;
+}
+
+.formulaire {
+    max-width: 80%;
+    max-height: 800px;
+    margin: 40px 200px;
+}
+
+.backForm {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 3rem;
+    width: 100%;
+    height: auto;
+    background: var(--color-blue);
+    box-shadow: -8px 8px 0px #edda5d, 6px -6px 20px rgba(0, 0, 0, 0.2);
+    border-radius:  2rem;
+    padding: 60px 70px;
+}
+
+
+input {
+    background: #4c75b2;
+    border: 3px;
+    color: white;
+    width: 100%;
+    font-size: 1.8rem;
+    padding: 16px 16px;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    transition: .3s;
+}
+
+input:focus-within {
+    outline: none;
+    border-width: 3px;
+    border-color: var(--color-yellow);
+    transition: .4s;
+}
+
+input:hover {
+    transform: scale(96%);  
+}
+
+input::placeholder {
+    color: rgb(237, 218, 93);
+    opacity: 0.6;
+    transition: .3s;
+}
+
+input:focus-within::placeholder {
+    opacity: 0;
+}
+
+textarea {
+    background: var(--color-white);
+    width: 100%;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: var(--color-yellow);
+    padding: 8px 10px;
+    background: var(--color-yellow);
+    font-size: 1.7rem;
+    transition: .3s;
+    color: #4c75b2;
+}
+
+textarea:hover {
+    transform: scale(96%);
+}
+
+textarea:focus-within {
+    outline: none;
+    border-width: 3px;
+    border-color: rgba(0, 0, 0, 0.171);
+}
+
+textarea::placeholder {
+    opacity: 0.6;
+    font-size: 1.9rem;
+    color: var(--color-blue);
+    transition: .3s;
+}
+
+textarea:focus-within::placeholder {
+    opacity: 0;
+}
+.button2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputName button {
+    cursor: pointer;
+    background: var(--color-yellow);
+    color: #4c75b2;
+    font-size: 1.8rem; 
+    margin-top: 15px;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 15px;
+    box-shadow: -4px 4px 0px #4c75b2;
+    transition:  .4s;
+    margin: 10px;
+}
+
+.inputName button:hover {
+    box-shadow: 0px 0px 0px #4c75b2;
+    transform: scale(95%);
+}
+
+.rightForm {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 40px;
+}
+
+.rightForm p {
+    text-align: end;
+    font-size: 3rem;
+    letter-spacing: 0.2em;
+    font-weight: 300;
+    color: white;
+    line-height: 5rem;
+
+}
+
+.social {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 5rem;
+    right: 3rem;
+}
+
+.social img {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 5rem;
+    margin: 3rem;
+    transition: 0.8s;
+}
+
+.social img:hover {
+    transform: rotate(-360deg) scale(130%);
+
+}
+
+/*footer*/
+
+footer {
+    margin-top: 5%;
+    max-width: 100%;
+    height: auto;
+}
+
+.backFooter {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    height: 4vh;
+    border-radius: 10px 10px 0px 0px;
+    background: #edda5d;
+}
+
+.backFooter p {
+    display: flex;
+    position: relative;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.menu {
+    display: none;
+}
+
+
+/* KEYFRAME */
+
+@keyframes loadBar {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+@keyframes ballLoop {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg);}
+}
+
+@keyframes clignotement {
+    0% {opacity: 0.5;}
+    50% {opacity: 0.9;}
+    100% {opacity: 0.5;}
+}
+
+@keyframes slideTop {
+    0% {transform: translateY(-200px);}
+    100%{ transform: translateY(0%);}
+} 
+
+@keyframes slideBot {
+    0% {transform: translateY(900px);}
+    100%{ transform: translateY(0px);}
+} 
+
+@keyframes opacite {
+    0% {opacity: 0;}
+    100%{opacity: 1;}
+} 
+
+@keyframes slideBallon {
+    0% {transform: translateY(900px);}
+    100%{ transform: translateX(0px);}
+} 
+
+@keyframes slideRight {
+    0% {transform: translateX(400px);}
+    100%{ transform: translateX(0px);}
+} 
+
+
+
+
+
+/* Media Query*/
+
+@media screen and (max-width: 1600px) {
+    .home {     
+        margin: 25vh 10% 30vh 10%;
+    }
+    .rightForm p {
+        font-size: 2rem;
+    }
+
+    .social {
+        bottom: 6rem;
+    }
+
+    .social img {
+        margin: 0px 2rem;
+        width: 4rem;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .home {     
+        margin: 20vh 10% 30vh 10%;
+    }
+
+    .contact {
+        margin-top: 30px;
+        font-size: 1.8rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .rightForm p {
+        font-size: 1.6rem;
+        line-height: 4rem;
+    }
+
+    .social {
+        bottom: 7rem;
+    }
+
+    .social img {
+        margin: 0px 1.6rem;
+        width: 3.5rem;
+    }
+
+    .inputName button {
+        font-size: 1.5rem;
+        padding: 1rem 1.8rem;
+    }
+}
+
+@media screen and (max-width: 1349px) {
+    
+    header {
+        padding: 35px 3%;
+    }
+
+    .contact {
+        margin-top: 30px;
+        font-size: 1.8rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .rightForm p {
+        font-size: 1.6rem;
+        line-height: 4rem;
+    }
+
+    .social {
+        bottom: 7rem;
+    }
+
+    .social img {
+        margin: 0px 1.6rem;
+        width: 3.5rem;
+    }
+
+    .inputName button {
+        font-size: 1.5rem;
+        padding: 1rem 1.8rem;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+  
+    header {
+        padding: 35px 3%;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    
+    header {
+        padding: 35px 0%;
+    }
+
+    .contact {
+        margin-top: 30px;
+        font-size: 1.6rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .rightForm p {
+        font-size: 1.4rem;
+        line-height: 3rem;
+    }
+
+    .social {
+        bottom: 15rem;
+    }
+
+    .social img {
+        margin: 0px 1.1rem;
+        width: 3rem;
+    }
+
+    .inputName button {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.4rem;
+    }
+}
+
+@media screen and (max-width: 1166px) {
+    
+    .social {
+        margin-bottom: -7rem;
+        margin-right: -1rem;
+    }
+
+}
+
+@media screen and (max-width: 1082px) {
+    .navBar li a {
+        font-size: 1.4rem;
+    }
+
+    .rightForm p {
+        font-size: 1.1rem;
+        font-weight: 500;
+        line-height: 3rem;
+    }
+
+    input::placeholder {
+        font-size: 1.4rem;
+    }
+
+    input {
+        height: 3.5rem;
+    }
+
+    textarea::placeholder {
+        font-size: 1.4rem;
+    }
+
+    textarea {
+        height: 5rem;
+    }
+
+    .inputName button {
+        font-size: 1.1rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .social {
+        margin-bottom: -5rem;
+        margin-right: -2rem;
+    }
+
+}
+
+@media screen and (max-width: 936px) {
+
+    .home {     
+        margin: 20vh 10% 30vh 10%;
+    }
+
+    .navBar li {
+        margin: 0% 2vh;
+    }
+
+    #foot { 
+        display: none !important;
+    }
+
+    .contact {
+        margin:  5rem auto;
+        font-size: 2rem;
+        padding: 1rem 5rem;
+    }
+
+
+    .formulaire {
+        margin: 8rem  10%;
+    }
+
+    .backForm {
+        display: flow;
+    }
+
+    .rightForm p {
+        display: flow;
+        text-align: center;
+        font-size: 1.9rem;
+        font-weight: 600;
+        line-height: 3rem;
+        margin: 3.5rem 0rem 7rem 2rem;
+
+    }
+
+    .social {
+        position: flow;
+        display: flex;
+        margin: -1.6rem 0px;
+        bottom: 0rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .social img {
+        position: relative;
+        width: 50%;
+        margin: 0px 4.7rem;
+    }
+
+    .inputName button {
+        margin-right: 0px;
+        font-size: 1.5rem;
+        padding: 1rem 1.2rem;
+    }
+ }
+
+ @media screen and (max-width: 767px) {
+    
+    /* MENU MOBILE */
+    
+    .menu {
+        display: block;
+        top: 0px;
+        position: absolute;
+        max-width: 300px;
+        border-radius: 5px;
+        margin: 1rem;
+        overflow: hidden;
+        background: #3d649e;
+        z-index: 10;
+    }
+
+    .btn-top {
+        padding: 10px;
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        display: flex;
+        align-items: center; 
+        cursor: pointer;
+        border-radius: 5px;
+        background: #3d649e;
+    }
+
+    .btn-top img {
+        width: 45px;
+    }
+
+    .links {
+        padding: 0 20px;
+        transition: height 0.4s ease-in-out;
+        transition: .5s;
+        margin-left: -150px;
+        height: 0;
+    }
+
+    .links li {
+        list-style-type: none;
+        padding: 15px 0;
+    }
+
+    .links li:last-child {
+        padding-bottom: 30px;
+    }
+
+    .links li a {
+        color: var(--color-yellow);
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+
+    .container {
+        border-radius: 0rem 0rem 2rem 2rem;
+        box-shadow: 0px 9px 0px rgb(237, 218, 93),0px 0px 0px rgb(237, 218, 93) ;
+    }
+    
+    .home {
+        margin: 0;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    header {
+        display: none;
+    }
+    
+    .navBar li {
+        margin: 0% 2vh;
+    }
+
+    #foot { 
+        display: none !important;
+    }
+
+
+    .contact {
+        margin:  5rem auto;
+        font-size: 2rem;
+        padding: 1rem 5rem;
+    }
+
+
+    .formulaire {
+        margin: 8rem  10%;
+    }
+
+    .backForm {
+        display: flow;
+    }
+
+    .rightForm p {
+        display: flow;
+        text-align: center;
+        font-size: 1.9rem;
+        font-weight: 600;
+        line-height: 3rem;
+        margin: 3.5rem 0rem 7rem 2rem;
+
+    }
+
+    .social {
+        position: flow;
+        display: flex;
+        margin: 0rem 0px;
+        bottom: 0rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .social img {
+        position: relative;
+        width: 65%;
+        margin: 0px 2.2rem;
+    }
+
+    .inputName button {
+        margin-right: 0px;
+        font-size: 1.5rem;
+        padding: 1rem 1.2rem;
+    }
+ }
+
+ @media screen and (max-width: 700px) {
+    
+    .contentBar::after {
+        left: 45%;
+    }    
+
+    #foot { 
+        display: none !important;
+    }
+    
+    header {
+        display: none;
+    }
+
+    .home {
+        display: inline;
+    }
+    
+
+
+    .contact {
+        margin:  4rem auto;
+        font-size: 1.6rem;
+        padding: 1rem 3rem;
+    }
+
+    .formulaire {
+        margin: 8rem  0px 0px 0px;
+        max-width: 100%;
+        max-height: 1100px;
+    }
+
+    .backForm {
+        display: flow;
+        border-radius: 1.2rem 1.2rem 0rem 0rem;
+        padding: 2rem 1rem;
+    }
+
+    .inputName button {
+        margin-bottom: 10px;
+        margin-right: 0px;
+        margin-left: 3px;
+        font-size: 1.2rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .rightForm p {
+        display: flow;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 400;
+        margin-right: -10px;
+        line-height: 3rem
+    }
+
+    .social {
+        position: block;
+        display: flex;
+        margin-left: 100px;
+        bottom: 0rem;
+        display: flex;
+        width: auto;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .social img {
+        position: relative;
+        width: 45%;
+        margin: 0px 0rem;
+    }
+
+    .backFooter {
+        border-radius: 0px;
+    }
+    .backFooter p {
+        font-size: 1rem;
+    }
+
+    footer {
+        margin-top: 0px;
+    }
+
+
+ }
+
+ @media  screen and  (max-device-width : 390px) {
+
+    .contentBar::after {
+        left: 43%;
+    }
+ }
+
+ @media screen and (max-device-width: 384px) {
+    
+    .btn-top img {
+        width: 30px;
+    }
+
+    #foot { 
+        display: none !important;
+    }
+    
+    header {
+        display: none;
+    }
+
+    .home {
+        display: inline;
+    }
+    
+
+    .contact {
+        margin:  0rem auto;
+        font-size: 1.4rem;
+        padding: 1rem 3rem;
+    }
+
+    .formulaire {
+        margin: 8rem  0px 0px 0px;
+        max-width: 100%;
+        max-height: 1100px;
+    }
+
+    .backForm {
+        display: flow;
+        border-radius: 1.2rem 1.2rem 0rem 0rem;
+        padding: 2rem 1rem;
+    }
+
+    .inputName button {
+        margin-bottom: 10px;
+        margin-right: 0px;
+        margin-left: 3px;
+        font-size: 1.2rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .rightForm p {
+        display: flow;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 400;
+        margin-right: -10px;
+        line-height: 3rem
+    }
+
+    .social {
+        position: block;
+        display: flex;
+        margin-left: 50px;
+        bottom: 0rem;
+        display: flex;
+        width: auto;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .social img {
+        position: relative;
+        width: 100%;
+        margin: 0px 0rem;
+    }
+
+    .backFooter {
+        border-radius: 0px;
+    }
+    .backFooter p {
+        font-size: 1rem;
+    }
+
+    footer {
+        margin-top: 0px;
+    }
+ }
+
+ @media  screen and  (max-device-width : 236px) {
+
+    .btn-top img {
+        width: 20px;
+    }
+
+    .btn-top {
+        padding: 5px;
+    }
+
+    .contentBar::after {
+        left: 50%;
+    }
+ }
+
+ 
+ @media  screen and  (max-device-width : 178px) {
+
+    .contentBar::after {
+        left: 68%;
+    }
+ }
+
+
+ /*  ANIMATION APPARITION */
+
+.unReveal {
+    opacity: 0;
+    transform:  translateY(-30px);
+}
+
+.reveal {
+    opacity: 1;
+    transform:  translateY(0);
+    transition: 1s;
+}
+

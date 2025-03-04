@@ -1,0 +1,1335 @@
+@font-face {
+    font-family: Josefin;
+    src: url(Font/JosefinSans-VariableFont_wght.ttf);
+}
+
+*{
+    font-family: Josefin;
+    font-weight: 350;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+/* VARIABLE */
+:root {
+    --color-blue: #6da8ff;
+    --color-yellow: #edda5d;
+    --color-gray: #b0c2d0;
+    --color-white: #d9d9d98e;
+}
+
+/* NAVIGATION BAR */
+
+body{
+    background: var(--color-white);
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px 10%  ;
+    animation: slideTop 1.5s ease forwards;
+}
+
+.navBar{
+    display: flex;
+    justify-content: center;
+}
+
+.navBar ul {
+    list-style: none;
+    display: inline-flex;
+    align-items:  center;
+    justify-content: center;
+}
+
+.navBar li{ 
+    margin: 0% 5vh;
+    padding: 10px 0px;
+}
+
+.navBar li a {
+    color: var(--color-blue);
+    font-size: 1.8rem;
+    position: relative;
+    font-weight: 600;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 6px;
+    letter-spacing: 3px;
+    text-align: center;
+    border-radius: 20px;
+    transition: .4s;
+}
+
+.navBar li a::after {
+    content: '';
+    width: 0%;
+    height: 4px;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--color-yellow);
+    transition: .4s;
+}
+
+.navBar li a:hover::after, 
+.navBar .ici::after {
+    width: 100%;
+}
+
+
+/* MAIN */
+
+.home {     
+    width: auto;
+    height: auto;
+    margin-top: 150px;
+    margin-bottom: 10%;
+    margin-left: 80px;
+    margin-right: 100px;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 50% 50%;  
+    overflow: hidden;
+}
+
+.imgUsers {
+    margin-left: 0;
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    animation: slideBot 2s ease forwards;
+
+}
+
+.back {
+    position: relative;
+    width: 100%;
+    height: auto;
+    left: 0px;
+}
+
+.name {
+    overflow-x: hidden;
+    height: auto;
+    width: auto;
+}
+
+.name h1 {
+    position: relative;
+    right: 0;
+    top: 35px;
+    margin-right: 60px;
+    color:  var(--color-blue);
+    height: auto;
+    text-align: right;
+    letter-spacing: 2rem;
+    font-weight: 500;
+    font-size: 8rem;
+    text-shadow: 3px 3px 0px var(--color-yellow);
+    line-height: 10rem;
+    /* animation: opacite 3s ease forwards; */
+}
+
+.contact {
+    cursor: pointer;
+    display: flex;
+    position:  relative;
+    background: var(--color-yellow);
+    color: var(--color-blue);
+    font-size: 2.5rem;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 100px;    
+    font-weight: 400;
+    margin-top: 70px;
+    padding: 1.5rem 1.8rem;
+    border: 3px solid transparent;
+    border-radius: 25px;
+    box-shadow: 5px 5px 0px var(--color-blue);
+    transition:  .4s;
+    animation: slideRight 2s ease forwards;
+    transform: scale(100%);
+}
+
+.contact:hover {
+    transform: scale(120%);
+    box-shadow: 0px 0px 0px var(--color-blue);
+    background: transparent;
+    border: 3px solid var(--color-blue);
+    font-weight: 500;
+   
+}
+
+#foot {
+    position: absolute;
+    opacity: 1;
+    z-index: 2;
+    width: 25%;
+    top: 18%;
+    right: -18.7%;
+    transition: .8s;
+    animation: ballLoop 10s linear infinite;
+
+}
+
+#foot:hover {
+    right: -8%;
+    transform: scale(110%);
+}
+
+.txtYellow {
+    color: var(--color-yellow);
+    font-weight: 500;
+}
+
+/* FORMULAIRE */
+
+.formulaire {
+    max-width: 80%;
+    max-height: 800px;
+    margin: 40px 200px;
+}
+
+.backForm {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 3rem;
+    width: 100%;
+    height: auto;
+    background: var(--color-blue);
+    box-shadow: -8px 8px 0px #edda5d, 6px -6px 20px rgba(0, 0, 0, 0.2);
+    border-radius:  2rem;
+    padding: 60px 70px;
+}
+
+
+input {
+    background: #4c75b2;
+    border: 3px;
+    color: white;
+    width: 100%;
+    font-size: 1.8rem;
+    padding: 16px 16px;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    transition: .3s;
+}
+
+input:focus-within {
+    outline: none;
+    border-width: 3px;
+    border-color: var(--color-yellow);
+    transition: .4s;
+}
+
+input:hover {
+    transform: scale(96%);  
+}
+
+input::placeholder {
+    color: rgb(237, 218, 93);
+    opacity: 0.6;
+    transition: .3s;
+}
+
+input:focus-within::placeholder {
+    opacity: 0;
+}
+
+textarea {
+    background: var(--color-white);
+    width: 100%;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: var(--color-yellow);
+    padding: 8px 10px;
+    background: var(--color-yellow);
+    font-size: 1.7rem;
+    transition: .3s;
+    color: #4c75b2;
+}
+
+textarea:hover {
+    transform: scale(96%);
+}
+
+textarea:focus-within {
+    outline: none;
+    border-width: 3px;
+    border-color: rgba(0, 0, 0, 0.171);
+}
+
+textarea::placeholder {
+    opacity: 0.6;
+    font-size: 1.9rem;
+    color: var(--color-blue);
+    transition: .3s;
+}
+
+textarea:focus-within::placeholder {
+    opacity: 0;
+}
+.button2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputName button {
+    cursor: pointer;
+    background: var(--color-yellow);
+    color: #4c75b2;
+    font-size: 1.8rem; 
+    margin-top: 15px;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 15px;
+    box-shadow: -4px 4px 0px #4c75b2;
+    transition:  .4s;
+    margin: 10px;
+}
+
+.inputName button:hover {
+    box-shadow: 0px 0px 0px #4c75b2;
+    transform: scale(95%);
+}
+
+.rightForm {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 40px;
+}
+
+.rightForm p {
+    text-align: end;
+    font-size: 3rem;
+    letter-spacing: 0.2em;
+    font-weight: 300;
+    color: white;
+    line-height: 5rem;
+
+}
+
+.social {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 5rem;
+    right: 3rem;
+}
+
+.social img {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 5rem;
+    margin: 3rem;
+    transition: 0.8s;
+}
+
+.social img:hover {
+    transform: rotate(-360deg) scale(130%);
+
+}
+
+/*footer*/
+
+footer {
+    margin-top: 5%;
+    max-width: 100%;
+    height: auto;
+}
+
+.backFooter {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    height: 4vh;
+    border-radius: 10px 10px 0px 0px;
+    background: #edda5d;
+}
+
+.backFooter p {
+    display: flex;
+    position: relative;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.menu {
+    display: none;
+}
+
+/*  ANIMATION APPARITION */
+
+.unReveal {
+    opacity: 0;
+    transform:  translateY(-30px);
+}
+
+.reveal {
+    opacity: 1;
+    transform:  translateY(0);
+    transition: 1s;
+}
+
+
+
+
+/* KEYFRAME */
+
+@keyframes ballLoop {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg);}
+}
+
+@keyframes clignotement {
+    0% {opacity: 0.5;}
+    50% {opacity: 0.9;}
+    100% {opacity: 0.5;}
+}
+
+@keyframes slideTop {
+    0% {transform: translateY(-200px);}
+    100%{ transform: translateY(0%);}
+} 
+
+@keyframes slideBot {
+    0% {transform: translateY(900px);}
+    100%{ transform: translateY(0px);}
+} 
+
+@keyframes opacite {
+    0% {opacity: 0;}
+    100%{opacity: 1;}
+} 
+
+@keyframes slideBallon {
+    0% {transform: translateY(900px);}
+    100%{ transform: translateX(0px);}
+} 
+
+@keyframes slideRight {
+    0% {transform: translateX(400px);}
+    100%{ transform: translateX(0px);}
+} 
+
+
+
+
+
+/* Media Query*/
+
+@media screen and (max-width: 1600px) {
+    .name h1 {
+        font-size: 5rem;
+        top: 10px;
+        line-height: 7rem;
+    }
+
+    .rightForm p {
+        font-size: 2rem;
+    }
+
+    .social {
+        bottom: 6rem;
+    }
+
+    .social img {
+        margin: 0px 2rem;
+        width: 4rem;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .name h1 {
+        font-size: 4rem;
+        top: 5px;
+        line-height: 7rem;
+    }
+
+    .contact {
+        margin-top: 30px;
+        font-size: 1.8rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .rightForm p {
+        font-size: 1.6rem;
+        line-height: 4rem;
+    }
+
+    .social {
+        bottom: 7rem;
+    }
+
+    .social img {
+        margin: 0px 1.6rem;
+        width: 3.5rem;
+    }
+
+    .inputName button {
+        font-size: 1.5rem;
+        padding: 1rem 1.8rem;
+    }
+}
+
+@media screen and (max-width: 1349px) {
+    
+    header {
+        padding: 35px 3%;
+    }
+    
+    .name h1 {
+        font-size: 4rem;
+        top: 5px;
+        line-height: 7rem;
+    }
+
+    .contact {
+        margin-top: 30px;
+        font-size: 1.8rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .rightForm p {
+        font-size: 1.6rem;
+        line-height: 4rem;
+    }
+
+    .social {
+        bottom: 7rem;
+    }
+
+    .social img {
+        margin: 0px 1.6rem;
+        width: 3.5rem;
+    }
+
+    .inputName button {
+        font-size: 1.5rem;
+        padding: 1rem 1.8rem;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+  
+    header {
+        padding: 35px 3%;
+    }
+
+    .name h1 {
+        font-size: 3.6rem;
+        top: 5px;
+        line-height: 6rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    
+    header {
+        padding: 35px 0%;
+    }
+
+    .name h1 {
+        font-size: 3rem;
+        top: 5px;
+        line-height: 5rem;
+    }
+
+    .contact {
+        margin-top: 30px;
+        font-size: 1.6rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .rightForm p {
+        font-size: 1.4rem;
+        line-height: 3rem;
+    }
+
+    .social {
+        bottom: 15rem;
+    }
+
+    .social img {
+        margin: 0px 1.1rem;
+        width: 3rem;
+    }
+
+    .inputName button {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.4rem;
+    }
+}
+
+@media screen and (max-width: 1166px) {
+    
+    .social {
+        margin-bottom: -7rem;
+        margin-right: -1rem;
+    }
+
+}
+
+@media screen and (max-width: 1082px) {
+    .navBar li a {
+        font-size: 1.4rem;
+    }
+     
+    .name h1 {
+        font-size: 2rem;
+        top: 5px;
+        line-height: 5rem;
+        text-shadow: 2px 2px 0px var(--color-yellow);
+    }
+
+    .rightForm p {
+        font-size: 1.1rem;
+        font-weight: 500;
+        line-height: 3rem;
+    }
+
+    input::placeholder {
+        font-size: 1.4rem;
+    }
+
+    input {
+        height: 3.5rem;
+    }
+
+    textarea::placeholder {
+        font-size: 1.4rem;
+    }
+
+    textarea {
+        height: 5rem;
+    }
+
+    .inputName button {
+        font-size: 1.1rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .social {
+        margin-bottom: -5rem;
+        margin-right: -2rem;
+    }
+
+}
+
+@media screen and (max-width: 936px) {
+    
+    .navBar li {
+        margin: 0% 2vh;
+    }
+
+    #foot { 
+        display: none !important;
+    }
+
+    .home {
+        display: inline;
+    }
+    
+    .back {
+        margin: 10rem 1rem;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .name h1 {
+        font-weight: 400;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        margin: 2rem 25rem;
+        font-size: 5rem;
+        top: 0px;
+        letter-spacing: 3rem;
+        line-height: 10rem;
+        text-shadow: 2px 2px 0px var(--color-yellow);
+    }
+
+    .contact {
+        margin:  5rem auto;
+        font-size: 2rem;
+        padding: 1rem 5rem;
+    }
+
+
+    .formulaire {
+        margin: 8rem  10%;
+    }
+
+    .backForm {
+        display: flow;
+    }
+
+    .rightForm p {
+        display: flow;
+        text-align: center;
+        font-size: 1.9rem;
+        font-weight: 600;
+        line-height: 3rem;
+        margin: 3.5rem 0rem 7rem 2rem;
+
+    }
+
+    .social {
+        position: flow;
+        display: flex;
+        margin: -1.6rem 0px;
+        bottom: 0rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .social img {
+        position: relative;
+        width: 50%;
+        margin: 0px 4.7rem;
+    }
+
+    .inputName button {
+        margin-right: 0px;
+        font-size: 1.5rem;
+        padding: 1rem 1.2rem;
+    }
+ }
+
+ @media screen and (max-width: 767px) {
+    /* MENU MOBILE */
+    
+   .menu {
+    display:block;
+    top: 10px;
+    position: absolute;
+    max-width: 300px;
+    border-radius: 5px;
+    margin: 1rem;
+    overflow: hidden;
+    background: #3d649e;
+    z-index: 100;
+}
+
+.btn-top {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center; 
+    cursor: pointer;
+    border-radius: 5px;
+    background: #3d649e;
+}
+
+.btn-top img {
+    width: 45px;
+}
+
+.links {
+    padding: 0 20px;
+    transition: height 0.4s ease-in-out;
+    transition: .5s;
+    margin-left: -150px;
+    height: 0;
+}
+
+.links li {
+    list-style-type: none;
+    padding: 15px 0;
+}
+
+.links li:last-child {
+    padding-bottom: 30px;
+}
+
+.links li a {
+    color: var(--color-yellow);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+    header {
+        display: none;
+    }
+    #foot { 
+        display: none !important;
+    }
+
+    .home {
+        display: inline;
+    }
+    
+    .back {
+        margin: 10rem 1rem;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .name h1 {
+        font-weight: 400;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        margin: 2rem 25rem;
+        font-size: 5rem;
+        top: 0px;
+        letter-spacing: 3rem;
+        line-height: 10rem;
+        text-shadow: 2px 2px 0px var(--color-yellow);
+    }
+
+    .contact {
+        margin:  5rem auto;
+        font-size: 2rem;
+        padding: 1rem 5rem;
+    }
+
+
+    .formulaire {
+        margin: 8rem  10%;
+    }
+
+    .backForm {
+        display: flow;
+    }
+
+    .rightForm p {
+        display: flow;
+        text-align: center;
+        font-size: 1.9rem;
+        font-weight: 600;
+        line-height: 3rem;
+        margin: 3.5rem 0rem 7rem 2rem;
+
+    }
+
+    .social {
+        position: flow;
+        display: flex;
+        margin: 0rem 0px;
+        bottom: 0rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .social img {
+        position: relative;
+        width: 65%;
+        margin: 0px 2.2rem;
+    }
+
+    .inputName button {
+        margin-right: 0px;
+        font-size: 1.5rem;
+        padding: 1rem 1.2rem;
+    }
+ }
+
+ @media screen and (max-width: 700px) {
+    
+   
+    
+    #foot { 
+        display: none !important;
+    }
+    
+    header {
+        display: none;
+    }
+
+    .home {
+        display: inline;
+    }
+    
+    .back {
+        margin: 8rem 0rem;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .name h1 {
+        font-weight: 500;
+        margin: -1rem 0rem 5rem 1rem;
+        font-size: 4.5rem;
+        top: 0px;
+        letter-spacing: 2rem;
+        line-height: 8rem;
+        text-shadow: 1.5px 1.5px 0px var(--color-yellow);
+    }
+
+    .contact {
+        margin:  4rem auto;
+        font-size: 1.6rem;
+        padding: 1rem 3rem;
+    }
+
+    .name {
+        height: auto;
+    }
+
+    .formulaire {
+        margin: 8rem  0px 0px 0px;
+        max-width: 100%;
+        max-height: 1100px;
+    }
+
+    .backForm {
+        display: flow;
+        border-radius: 1.2rem 1.2rem 0rem 0rem;
+        padding: 2rem 1rem;
+    }
+
+    .inputName button {
+        margin-bottom: 10px;
+        margin-right: 0px;
+        margin-left: 3px;
+        font-size: 1.2rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .rightForm p {
+        display: flow;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 400;
+        margin-right: -10px;
+        line-height: 3rem
+    }
+
+    .social {
+        position: block;
+        display: flex;
+        margin-left: 100px;
+        bottom: 0rem;
+        display: flex;
+        width: auto;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .social img {
+        position: relative;
+        width: 45%;
+        margin: 0px 0rem;
+    }
+
+    .backFooter {
+        border-radius: 0px;
+    }
+    .backFooter p {
+        font-size: 1rem;
+    }
+
+    footer {
+        margin-top: 0px;
+    }
+
+
+ }
+
+ @media screen and (max-width: 540px) {
+    .name h1 {
+        font-size: 3rem;
+    }
+ }
+
+ @media screen and (max-device-width: 384px) {
+    
+    #foot { 
+        display: none !important;
+    }
+    
+    header {
+        display: none;
+    }
+
+    .home {
+        display: inline;
+    }
+    
+    .back {
+        margin: 5rem 0rem;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .name h1 {
+        font-weight: 800;
+        margin: -1rem 0rem 5rem 1rem;
+        font-size: 2rem;
+        top: 0px;
+        letter-spacing: 1.2rem;
+        line-height: 5rem;
+        text-shadow: 1.5px 1.5px 0px var(--color-yellow);
+    }
+
+    .contact {
+        margin:  0rem auto;
+        font-size: 1.4rem;
+        padding: 1rem 3rem;
+    }
+
+    .name {
+        height: 400px;
+    }
+
+    .formulaire {
+        margin: 8rem  0px 0px 0px;
+        max-width: 100%;
+        max-height: 1100px;
+    }
+
+    .backForm {
+        display: flow;
+        border-radius: 1.2rem 1.2rem 0rem 0rem;
+        padding: 2rem 1rem;
+    }
+
+    .inputName button {
+        margin-bottom: 10px;
+        margin-right: 0px;
+        margin-left: 3px;
+        font-size: 1.2rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .rightForm p {
+        display: flow;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 400;
+        margin-right: -10px;
+        line-height: 3rem
+    }
+
+    .social {
+        position: block;
+        display: flex;
+        margin-left: 50px;
+        bottom: 0rem;
+        display: flex;
+        width: auto;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .social img {
+        position: relative;
+        width: 100%;
+        margin: 0px 0rem;
+    }
+
+    .backFooter {
+        border-radius: 0px;
+    }
+    .backFooter p {
+        font-size: 1rem;
+    }
+
+    footer {
+        margin-top: 0px;
+    }
+
+
+ }
+
+ @media screen and (max-device-width: 250px) {
+    
+    .btn-top img {
+        width: 25px;
+    }
+
+    #foot { 
+        display: none !important;
+    }
+    
+    header {
+        display: none;
+    }
+    
+    .back {
+        margin: 3rem 0rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .name h1 {
+        font-weight: 800;
+        margin: 3rem 0rem 5rem 1rem;
+        font-size: 2rem;
+        top: 0px;
+        letter-spacing: .6rem;
+        line-height: 3.5rem;
+        text-shadow: 1.5px 1.5px 0px var(--color-yellow);
+    }
+
+    .contact {
+        margin:  2rem 1rem 2rem 1rem;
+        font-size: 1.4rem;
+        padding: .5rem 2rem;
+    }
+
+    .name {
+        height: 500px;
+    }
+
+    .formulaire {
+        margin: 0rem  0px 0px 0px;
+        max-width: 100%;
+        max-height: 1100px;
+    }
+
+    .backForm {
+        display: flow;
+        border-radius: 1.2rem 1.2rem 0rem 0rem;
+        padding: 2rem 1rem;
+    }
+
+    input::placeholder {
+        font-size: 1rem;
+    }
+
+    textarea::placeholder {
+        color: #3b71c2;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+
+    .inputName button {
+        margin-bottom: 10px;
+        margin-right: 0px;
+        margin-left: 3px;
+        font-size: 1rem;
+        padding: .8rem 1rem;
+    }
+
+    .rightForm p {
+        display: flow;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-left: 0rem;
+        line-height: 3rem
+    }
+
+    .button2 {
+        display: inline;
+    }
+
+    .social {
+        position: absolute;
+        display: flex;
+        margin-left: 50px;
+        bottom: 0rem;
+        width: auto;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .social img {
+        position: relative;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        margin: 0px 0rem;
+    }
+
+    .backFooter {
+        height: auto;
+        border-radius: 0px;
+    }
+
+    .backFooter p {
+        margin: 10px 0px;
+        font-size: 1rem;
+    }
+
+    footer {
+        margin-top: 0px;
+    }
+
+ }
+
+ @media screen and (max-device-width: 170px) {
+    
+    .menu {
+        margin: .1rem 0rem 0rem .7rem;
+    }
+
+    .btn-top img {
+        width: 15px;
+    }
+
+    .btn-top {
+        padding: 5px -5px 5px 5px;
+    }
+
+    .links li a {
+        color: var(--color-yellow);
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .links li {
+        list-style-type: none;
+        padding: 20px 0;
+    }
+
+
+    #foot { 
+        display: none !important;
+    }
+    
+    header {
+        display: none;
+    }
+    
+    .back {
+        margin: 3rem 0rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .name h1 {
+        font-weight: 700;
+        margin: -1rem 0rem 5rem 1rem;
+        font-size: 1rem;
+        top: 0px;
+        letter-spacing: .6rem;
+        line-height: 3.5rem;
+        text-shadow: 1.5px 1.5px 0px var(--color-yellow);
+    }
+
+    .contact {
+        margin:  -2rem 1rem 2rem .5rem;
+        font-size: 1rem;
+        padding: .5rem 2rem;
+    }
+
+    .name {
+        height: 400px;
+    }
+
+    .formulaire {
+        margin: 0rem  0px 0px 0px;
+        max-width: 100%;
+        max-height: 1100px;
+    }
+
+    .backForm {
+        display: flow;
+        border-radius: 1.2rem 1.2rem 0rem 0rem;
+        padding: 2rem 1rem;
+    }
+
+    input::placeholder {
+        font-size: 1rem;
+    }
+
+    textarea::placeholder {
+        color: #3b71c2;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+
+    .inputName button {
+        margin-bottom: 10px;
+        margin-right: 0px;
+        margin-left: 3px;
+        font-size: 1rem;
+        padding: .8rem 1rem;
+    }
+
+    .rightForm p {
+        display: flow;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-left: 0rem;
+        line-height: 3rem
+    }
+
+    .button2 {
+        display: inline;
+    }
+
+    .social {
+        position: absolute;
+        display: flex;
+        margin-left: 50px;
+        bottom: 0rem;
+        width: auto;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .social img {
+        position: relative;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        margin: 0px 0rem;
+    }
+
+    .backFooter {
+        height: auto;
+        border-radius: 0px;
+    }
+
+    .backFooter p {
+        margin: 10px 0px;
+        font-size: 1rem;
+    }
+
+    footer {
+        margin-top: 0px;
+    }
+
+ }
